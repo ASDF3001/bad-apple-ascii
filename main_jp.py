@@ -1,3 +1,4 @@
+import argparse
 import os
 import sys
 import time
@@ -118,12 +119,28 @@ def play_video(frames):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="コンソールで Bad Apple!! をアスキーアート再生")
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--mp3", action="store_true", help="mp3で即再生（メニューを省略）")
+    group.add_argument("--midi", action="store_true", help="MIDIで即再生（メニューを省略）")
+    args = parser.parse_args()
+
     frames = load_frames(CACHE_FILE)
     if not frames:
         sys.exit(1)
 
     if not init_audio():
         sys.exit(1)
+
+    # 引数指定があればメニューを省略して即再生
+    if args.mp3:
+        if play_audio(MP3_PATH):
+            play_video(frames)
+        return
+    if args.midi:
+        if play_audio(MIDI_PATH):
+            play_video(frames)
+        return
 
     while True:
         print("\n" + "=" * 40)

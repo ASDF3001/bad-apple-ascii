@@ -1,2 +1,2 @@
-pygame
-fpstimer
+pygame==2.6.1
+fpstimer==0.0.1

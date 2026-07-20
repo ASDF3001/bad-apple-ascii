@@ -1,10 +1,11 @@
 【1. 必要なファイル構成】
 動かすには最低限、以下のファイルが同じ場所に揃っている必要があります。
 .
-├── main.py                          # 再生プログラム本体
+├── main_jp.py                       # 日本語版再生プログラム
+├── main_en.py                       # 英語版再生プログラム
 ├── requirements.txt                 # 必要なライブラリ一覧
 ├── memo.txt                         # このメモファイル
-├── bad-apple-audio.mp3              # 音声ファイル（通常用）
+├── bad-apple-audio.mp3              # 音声ファイル（mp3用）
 ├── alstroemeria_records_bad_apple.mid # 音声ファイル（MIDI用）
 └── TextFiles/
     └── bad_apple_all.txt            # アスキーアートのデータ
@@ -13,14 +14,19 @@
 1. ターミナルで必要なライブラリをインストールします。
    pip install -r requirements.txt
 
-2. プログラムを実行します。
-   python main.py
+2. プログラムを実行します（環境によっては python3）。
+   python main_jp.py        # 日本語版
+   python main_en.py        # 英語版
 
-【3. 留意点・注意すること】2つだけで超軽快に動作します。
+   CLI引数で直接再生することもできます。
+   python main_jp.py --mp3    # mp3で即再生
+   python main_jp.py --midi   # MIDIで即再生
+
+【3. 留意点・注意すること】
 ・MIDIが鳴らない場合の対処法（特にLinux環境）
   WindowsやMacならそのまま音が鳴るはずですが、Linux環境（Ubuntuなど）だと
   OS側にMIDIを再生する音源が入っていないせいで、無音になったりエラーが出る場合があります。
   もしMIDIの音が鳴らなかったら、以下のコマンドをターミナルで実行して音源を入れてください。
-  
+
   (Ubuntu / Debian系の場合)
   sudo apt update && sudo apt install timidity fluid-soundfont-gm
