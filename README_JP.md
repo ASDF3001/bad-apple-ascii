@@ -24,31 +24,31 @@ Windows / Linux の両方で動作します。
 
 アスキーデータは `TextFiles/bad_apple_all.txt` 1 本にまとまっていて、プログラムはこのファイルだけを読み込みます。
 
-## 動かし方 / How to run
+## 動かし方
 
-1. 必要なライブラリをインストールします。 / Install the required libraries:
+1. 必要なライブラリをインストールします。:
 
    ```
    pip install -r requirements.txt
    ```
 
-2. プログラムを実行します。 / Run the program:
+2. プログラムを実行します。:
 
    ```
    python main_jp.py
    ```
 
-   （環境によっては `python3 main_jp.py` としてください） / (use `python3` if `python` is not available)
+   （環境によっては `python3 main_jp.py` としてください）
 
-3. メニューで再生方法を選びます。 / Choose a playback option from the menu:
+3. メニューで再生方法を選びます。:
 
-   - `1` mp3 で再生 / play with mp3
-   - `2` MIDI で再生 / play with MIDI
-   - `3` 終了 / exit
+   - `1` mp3 で再生 
+   - `2` MIDI で再生
+   - `3` 終了 
 
-再生中は `Ctrl+C` で停止できます。 / Press `Ctrl+C` during playback to stop.
+再生中は `Ctrl+C` で停止できます。
 
-## 動作の注意点 / Notes
+## 動作の注意点 
 
-- 30FPS で再生されます。 / Playback runs at 30 FPS.
-- MIDI を再生する場合、Linux 環境などで音が鳴らないときは音源の導入が必要です（詳しくは `memo.txt` を参照）。 / When playing MIDI, if no sound comes out (e.g. on Linux), you may need to install a MIDI sound font — see `memo.txt` for details.
+- 30FPS で再生されます。
+- MIDI を再生する場合、Linux 環境などで音が鳴らないときは音源の導入が必要です（詳しくは `memo.txt` を参照。
