@@ -1,0 +1,14 @@
+/.idea
+__pycache__/
+*.jpg
+*.log
+dev-test.py
+Old stuff/frame-extractor-multithread.py
+audio.mp3
+Old stuff/frame-extractor-multi-process.py
+Old stuff/frame-extractor-pool.py
+Old stuff/frame-extractor.py
+touhou.mp4
+
+# アスキーデータはリポジトリに含める / keep the ASCII data in the repo
+!TextFiles/bad_apple_all.txt
